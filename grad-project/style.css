@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #ffe7e7 0%, #e8f8ff 100%);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    font-family: 'Montserrat', Arial, sans-serif; 
+    background: linear-gradient(90deg, #ffb6b9 0%, #f9dce7 100%);
+    padding: 1.5rem 0 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(255,182,185,0.15);
+}
+
+h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2.5rem;
+    color: #a83279;
+}
+
+.album {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.photo-card {
+    background: #fff8ee;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(255,182,185,0.10), 0 1.5px 8px rgba(168,50,121,0.10);
+    overflow: hidden;
+    width: 260px;
+    transition: box-shadow 0.3s;
+    position: relative;
+}
+
+.photo-card:hover {
+    box-shadow: 0 8px 32px rgba(253,94,83,0.15), 0 3px 16px rgba(168,50,121,0.13);
+}
+
+.photo-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; 
+    overflow: hidden;
+}
+
+.photo-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    transition: filter 0.3s;
+    border-bottom: 1px solid #ffb6b9;
+}
+
+.photo-desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 182, 185, 0.93);
+    color: #a83279;
+    padding: 1rem;
+    opacity: 0;
+    font-size: 1rem;
+    transition: opacity 0.4s;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+}
+
+.photo-container:hover img {
+    filter: blur(2px) brightness(0.85);
+}
+
+.photo-container:hover .photo-desc {
+    opacity: 1;
+}
+
+main {
+    flex: 1 1 auto;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+section {
+    margin-bottom: 2.5rem;
+}
+
+h2 {
+    color: #fd5e53;
+    margin-top: 0;
+}
+
+footer {
+    background: linear-gradient(90deg, #f9dce7 0%, #ffb6b9 100%);
+    color: #a83279;
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 -2px 8px rgba(255,182,185,0.11);
+}
+
+@media (max-width: 900px) {
+    .album {
+        gap: 1.2rem;
+    }
+    main {
+        padding: 0.5rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .photo-card {
+        width: 45vw;
+        min-width: 180px;
+        max-width: 290px;
+    }
+}
+
+@media (max-width: 600px) {
+    .album {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .photo-card {
+        width: 98vw;
+        min-width: 140px;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+    h1 {
+        font-size: 1.4rem;
+        padding: 0 0.3rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    header,
+    footer {
+        padding: 0.7rem 0;
+        font-size: 1rem;
+    }
+    .photo-desc {
+        font-size: 0.95rem;
+        padding: 0.7rem;
+    }
+    main {
+        padding: 0.3rem;
+    }
+}
